@@ -20,8 +20,7 @@ DATA_DIR = PROJECT_ROOT / "data"
 
 
 def load_vector_database(
-        persist_directory: Path,
-        collection_name: str = "sentencias_pasadas"
+    persist_directory: Path, collection_name: str = "sentencias_pasadas"
 ) -> Chroma:
     """
     Load the persisted Chroma vector database.
@@ -38,7 +37,7 @@ def load_vector_database(
     vectorstore = Chroma(
         persist_directory=str(persist_directory),
         embedding_function=embeddings,
-        collection_name=collection_name
+        collection_name=collection_name,
     )
 
     return vectorstore

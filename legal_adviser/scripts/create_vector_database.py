@@ -45,10 +45,10 @@ def load_excel_as_documents(excel_path: Path) -> List[Document]:
 
 
 def create_vector_database(
-        documents: List[Document],
-        persist_directory: Path,
-        collection_name: str = "sentencias_pasadas",
-        batch_size: int = 100
+    documents: List[Document],
+    persist_directory: Path,
+    collection_name: str = "sentencias_pasadas",
+    batch_size: int = 100,
 ) -> Chroma:
     """
     Create and persist a Chroma vector database from documents.
@@ -69,20 +69,21 @@ def create_vector_database(
         documents=documents[:batch_size],
         embedding=embeddings,
         persist_directory=str(persist_directory),
-        collection_name=collection_name
+        collection_name=collection_name,
     )
 
     # Add remaining documents in batches
     for i in range(batch_size, len(documents), batch_size):
-        batch = documents[i:i + batch_size]
+        batch = documents[i : i + batch_size]
         vectorstore.add_documents(batch)
-        print(f"Processed {min(i + batch_size, len(documents))}/{len(documents)} documents")
+        print(
+            f"Processed {min(i + batch_size, len(documents))}/{len(documents)} documents"
+        )
 
     return vectorstore
 
 
 def main() -> None:
-
     # Get project root (assuming script is in scripts/ folder)
     project_root = Path(__file__).parent.parent
     data_dir = project_root / "data"
