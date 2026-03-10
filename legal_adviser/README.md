@@ -56,7 +56,7 @@ A known limitation: exact-term queries (e.g., acronyms like "PIAR") fail to retr
 
 Conversational memory is not implemented — multi-turn queries that reference earlier answers need to be rephrased as self-contained questions.
 
-See [Informe.md](Informe.md) for the full analysis including example Q&A outputs.
+See [report.md](report.md) for the full analysis including example Q&A outputs.
 
 ## Potential improvements
 

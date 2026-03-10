@@ -41,7 +41,7 @@ Run in order:
 | Optimistic (lower bound) | $531,410.41 |
 | Pessimistic (upper bound) | $786,732.04 |
 
-Per-year breakdowns are available in the forecasting notebook. See [report/Informe.md](report/Informe.md) for the full analysis with charts.
+Per-year breakdowns are available in the forecasting notebook. See [report/report.md](report/report.md) for the full analysis with charts.
 
 ## Potential improvements
 
