@@ -1,8 +1,27 @@
-# Prueba técnica DataKnow
-## Carolina Rojas Duque - 19 de octubre de 2025
+# Tools for legal construction firm
 
-Este repositorio contiene directorios con las implementaciones realizadas para resolver las dos pruebas técnicas propuestas. En cada directorio se especifican los contenidos de los mismos, la ubicación de los archivos, de cada informe correspondiente, e instrucciones para reproducibilidad del código en caso de requerirse. 
+Two independent data science projects: time series forecasting for cost estimation, and a RAG-based system for querying a legal case database in natural language.
 
-En ambos casos se opta por utilizar [uv](https://docs.astral.sh/uv/) para el manejo de dependencias y gestión de ambientes virtuales independientes en Python. Para utilizarlo, basta correr `uv sync` en la terminal, una vez se tenga `uv` instalado en el sistema local, y ubicado en los directorios correspondientes a cada proyecto. Otra alternativa consiste en crear el ambiente virtual e instalar las dependencias a partir de los archivos `pyproject.toml` con la herramienta de su preferencia. 
+## Projects
 
-En aras de garantizar buenas prácticas, el repositorio sigue [gitmoji](https://gitmoji.dev/) como estándar de mensajes de commit, y utiliza [ruff](https://docs.astral.sh/ruff/) para linting y formateo del código.
+### [cost-estimation/](cost-estimation/)
+
+Forecasting construction equipment acquisition costs over a 3-year horizon using Facebook Prophet on historical material price time series data.
+
+**Stack:** Python, Prophet, pandas, Jupyter
+
+### [legal_adviser/](legal_adviser/)
+
+A proof-of-concept RAG pipeline for natural-language question answering over a corpus of legal rulings. Uses semantic embeddings, ChromaDB, and GPT-4o-mini via LangChain.
+
+**Stack:** Python, LangChain, ChromaDB, OpenAI API
+
+## Setup
+
+Both projects use [uv](https://docs.astral.sh/uv/) for dependency management. Navigate to the relevant directory and run:
+
+```bash
+uv sync
+```
+
+Alternatively, use your preferred virtual environment tool with the `pyproject.toml`. Code style is enforced with [ruff](https://docs.astral.sh/ruff/).
